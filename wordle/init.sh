@@ -9,7 +9,7 @@ STAKING_AMOUNT="1000000000stake"
 
 NAMESPACE_ID=$(echo $RANDOM | md5sum | head -c 16; echo;)
 echo $NAMESPACE_ID
-DA_BLOCK_HEIGHT=$(curl https://rpc.limani.celestia-devops.dev/block?height | jq -r '.result.block.header.height')
+DA_BLOCK_HEIGHT=$(curl https://rpc.limani.celestia-devops.dev/block | jq -r '.result.block.header.height')
 echo $DA_BLOCK_HEIGHT
 
 rm -rf "$HOME"/.wordled
