@@ -13,6 +13,7 @@ DA_BLOCK_HEIGHT=$(curl https://rpc.limani.celestia-devops.dev/block | jq -r '.re
 echo $DA_BLOCK_HEIGHT
 
 rm -rf "$HOME"/.wordled
+ignite chain build
 wordled tendermint unsafe-reset-all
 wordled init $VALIDATOR_NAME --chain-id $CHAIN_ID
 
