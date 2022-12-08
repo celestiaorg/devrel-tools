@@ -12,7 +12,6 @@ echo $NAMESPACE_ID
 DA_BLOCK_HEIGHT=$(curl https://rpc.limani.celestia-devops.dev/block | jq -r '.result.block.header.height')
 echo $DA_BLOCK_HEIGHT
 
-rm -rf "$HOME"/.recipesd
 ignite chain build
 recipesd tendermint unsafe-reset-all
 recipesd init $VALIDATOR_NAME --chain-id $CHAIN_ID

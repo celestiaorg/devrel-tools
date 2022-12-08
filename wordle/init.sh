@@ -12,7 +12,7 @@ echo $NAMESPACE_ID
 DA_BLOCK_HEIGHT=$(curl https://rpc.limani.celestia-devops.dev/block | jq -r '.result.block.header.height')
 echo $DA_BLOCK_HEIGHT
 
-rm -rf "$HOME"/.wordle
+ignite chain build
 wordled tendermint unsafe-reset-all
 wordled init $VALIDATOR_NAME --chain-id $CHAIN_ID
 

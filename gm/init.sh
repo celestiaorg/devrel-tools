@@ -13,8 +13,8 @@ echo $NAMESPACE_ID
 DA_BLOCK_HEIGHT=$(curl https://rpc.limani.celestia-devops.dev/block | jq -r '.result.block.header.height')
 echo $DA_BLOCK_HEIGHT
 
-rm -rf "$HOME"/.gmd
 ignite chain build
+gmd tendermint unsafe-reset-all
 gmd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 
 gmd keys add $KEY_NAME --keyring-backend test
