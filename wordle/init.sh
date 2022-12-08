@@ -19,5 +19,4 @@ wordled init $VALIDATOR_NAME --chain-id $CHAIN_ID
 wordled keys add $KEY_NAME --keyring-backend test
 wordled add-genesis-account $KEY_NAME $TOKEN_AMOUNT --keyring-backend test
 wordled gentx $KEY_NAME $STAKING_AMOUNT --chain-id $CHAIN_ID --keyring-backend test
-wordled collect-gentxs
 wordled start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://localhost:26659","timeout":60000000000,"gas_limit":6000000}' --rollmint.namespace_id $NAMESPACE_ID --rollmint.da_start_height $DA_BLOCK_HEIGHT
