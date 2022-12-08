@@ -13,6 +13,7 @@ DA_BLOCK_HEIGHT=$(curl https://rpc.limani.celestia-devops.dev/block | jq -r '.re
 echo $DA_BLOCK_HEIGHT
 
 rm -rf "$HOME"/.recipesd
+ignite chain build
 recipesd tendermint unsafe-reset-all
 recipesd init $VALIDATOR_NAME --chain-id $CHAIN_ID
 
