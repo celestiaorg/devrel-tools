@@ -7,7 +7,6 @@ TOKEN_AMOUNT="10000000000000000000000000uwasm"
 STAKING_AMOUNT=1000000000uwasm
 CHAINFLAG="--chain-id ${CHAIN_ID}"
 TXFLAG="--chain-id ${CHAIN_ID} --gas-prices 0uwasm --gas auto --gas-adjustment 1.3"
-NODEIP="--node http://127.0.0.1:26657"
 
 NAMESPACE_ID=$(echo $RANDOM | md5sum | head -c 16; echo;)
 echo $NAMESPACE_ID
