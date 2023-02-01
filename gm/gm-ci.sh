@@ -64,7 +64,7 @@ go mod download
 ignite scaffold query gm --response text -y
 
 # add "gm world!" to query
-sed -i 's/\.QueryGmResponse{}, nil/.QueryGmResponse{Text: "gm world!"}, nil/g' x/gm/keeper/grpc_query_gm.go
+sed -i 's/\.QueryGmResponse{}, nil/.QueryGmResponse{Text: "gm world!"}, nil/g' x/gm/keeper/query_gm.go
 
 # set up chain
 VALIDATOR_NAME=validator1
@@ -95,7 +95,7 @@ tmux send-keys -t gm-rollkit 'celestia light start --core.ip https://rpc-mocha.p
 tmux new-window -t gm-rollkit -n 'rollkit-node'
 
 # start rollkit node
-gmd start --rollmint.aggregator true --rollmint.da_layer celestia --rollmint.da_config='{"base_url":"http://localhost:26659","timeout":60000000000,"fee":6000,"gas_limit":6000000}' --rollmint.namespace_id $(echo $RANDOM | md5sum | head -c 16; echo;) --rollmint.da_start_height $(curl https://rpc-mocha.pops.one/block | jq -r '.result.block.header.height')
+gmd start --rollkit.aggregator true --rollkit.da_layer celestia --rollkit.da_config='{"base_url":"http://localhost:26659","timeout":60000000000,"fee":6000,"gas_limit":6000000}' --rollkit.namespace_id $(echo $RANDOM | md5sum | head -c 16; echo;) --rollkit.da_start_height $(curl https://rpc-mocha.pops.one/block | jq -r '.result.block.header.height')
 
 # make new window in gm-rollkit session and echo mnemonic
 # tmux new-window -t gm-rollkit -n 'mnemonic'
