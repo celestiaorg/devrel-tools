@@ -6,7 +6,6 @@ KEY_NAME=gm-key
 CHAINFLAG="--chain-id ${CHAIN_ID}"
 TOKEN_AMOUNT="10000000000000000000000000stake"
 STAKING_AMOUNT="1000000000stake"
-NODEIP="--node http://127.0.0.1:26657"
 
 NAMESPACE_ID=$(echo $RANDOM | md5sum | head -c 16; echo;)
 echo $NAMESPACE_ID
