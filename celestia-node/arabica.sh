@@ -83,7 +83,7 @@ fi
 echo "🚀  Instantiating a Celestia light node..."
 celestia light init --p2p.network arabica > /dev/null
 
-echo "🎉  Installation complete! You can now use Celestia Node from your terminal by running \"start-a\"."
+echo "🎉  Installation complete! You can now use Celestia Node from your terminal by running \"celestia\"."
 
 # Start the Celestia light node
 echo "🚀  Starting Celestia light node on Arabica devnet..."
