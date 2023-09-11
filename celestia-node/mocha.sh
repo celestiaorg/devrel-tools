@@ -15,8 +15,8 @@ fi
 echo "💻  OS: $OS"
 echo "🏗️  ARCH: $ARCH"
 
-GOLANG_VERSION="1.20.2"
-CELESTIA_NODE_VERSION="v0.11.0-rc8"
+GOLANG_VERSION="1.21.0"
+CELESTIA_NODE_VERSION="v0.11.0-rc12"
 
 echo "🐹  Golang version required for Mocha: $GOLANG_VERSION"
 echo "🌌  Celestia Node version required for Mocha: $CELESTIA_NODE_VERSION"
